@@ -1,0 +1,29 @@
+name: keepalive
+
+# El proyecto free de Supabase se pausa tras 7 días sin actividad.
+# Este ping cada 3 días lo mantiene despierto.
+# Configurar en el repo: Settings → Secrets and variables → Actions:
+#   SUPABASE_URL       = https://TU-PROYECTO.supabase.co
+#   SUPABASE_ANON_KEY  = tu anon key
+
+on:
+  schedule:
+    - cron: "0 12 */3 * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping REST
+        run: |
+          if [ -z "${{ secrets.SUPABASE_URL }}" ]; then
+            echo "Falta el secret SUPABASE_URL; nada que hacer."
+            exit 0
+          fi
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/papers?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          echo "HTTP $code"
+          [ "$code" = "200" ] || exit 1

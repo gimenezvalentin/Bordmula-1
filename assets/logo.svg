@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bórdmula 1">
+  <!-- Placeholder. Reemplazá este archivo por el logo real del canal (mismo nombre). -->
+  <rect width="64" height="64" rx="10" fill="#14140f"/>
+  <g fill="#f4f1ea">
+    <path d="M14 44V20h10c5 0 8 2.6 8 6.6 0 2.6-1.4 4.4-3.6 5.2 2.8.7 4.6 2.8 4.6 5.9 0 4.2-3.2 6.3-8.4 6.3H14zm6-14.4h3.4c1.8 0 2.9-.9 2.9-2.5s-1.1-2.4-2.9-2.4H20v4.9zm0 9.6h3.9c2 0 3.2-1 3.2-2.7 0-1.7-1.2-2.6-3.3-2.6H20v5.3z"/>
+    <path d="M42 44V26.6l-4.2 2.3-1.8-4.3L44 20h4v24h-6z"/>
+  </g>
+  <rect x="8" y="52" width="48" height="4" fill="#2d5bff"/>
+</svg>

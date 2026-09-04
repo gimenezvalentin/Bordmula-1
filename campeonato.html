@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bórdmula 1 — Campeonato</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="public">
+  <header class="topbar">
+    <a class="brand" href="campeonato.html">
+      <img src="assets/logo.svg" alt="" width="34" height="34">
+      <span>BÓRDMULA <b>1</b></span>
+    </a>
+    <nav class="topbar__actions">
+      <span class="summary" id="summary"></span>
+    </nav>
+  </header>
+
+  <main class="public__main">
+    <section class="rail rail--wide">
+      <div id="standings" class="standings"></div>
+    </section>
+
+    <h2 class="section-h">Fecha por fecha</h2>
+    <section id="history" class="history"></section>
+  </main>
+
+  <footer class="foot">
+    <span>Bórdmula 1 · <span id="year"></span> · puntajes de tapas de diario</span>
+  </footer>
+
+  <script type="module" src="js/campeonato.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Bórdmula 1 — Scorer</title>
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.svg" alt="" width="34" height="34">
+      <span>BÓRDMULA <b>1</b></span>
+    </a>
+    <div class="topbar__actions" id="topbar-actions" hidden>
+      <span class="savechip" id="savechip" hidden></span>
+      <button class="btn btn--primary" id="publish">Publicar fecha</button>
+      <div class="menu">
+        <button class="btn btn--ghost menu__btn" id="menu-btn" aria-haspopup="true"
+                aria-expanded="false" aria-label="Más opciones">⋯</button>
+        <div class="menu__list" id="menu-list" hidden>
+          <a href="campeonato.html" target="_blank" rel="noopener">Ver campeonato ↗</a>
+          <button type="button" id="btn-papers">Diarios</button>
+          <button type="button" id="btn-export">Descargar respaldo</button>
+          <label>Importar respaldo
+            <input type="file" id="btn-import" accept="application/json" hidden></label>
+          <hr>
+          <button type="button" id="btn-logout">Cerrar sesión</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <p class="demo-note" id="demo-note" hidden>
+    Modo demo — todo se guarda en este navegador. Cargá <code>js/config.js</code> para publicar de verdad.
+  </p>
+
+  <!-- LOGIN -->
+  <section id="login" class="login" hidden>
+    <form id="login-form" class="login__box">
+      <h1>Bórdmula 1</h1>
+      <p class="muted">Entrá para cargar los puntajes.</p>
+      <label>Email <input type="email" id="email" required autocomplete="username"></label>
+      <label>Contraseña <input type="password" id="password" required autocomplete="current-password"></label>
+      <button class="btn btn--primary" type="submit">Entrar</button>
+      <p class="login__error" id="login-error"></p>
+    </form>
+  </section>
+
+  <!-- SCORER -->
+  <main id="scorer" class="scorer" hidden>
+    <div class="eventbar" id="eventbar"></div>
+
+    <div class="scorer__cols">
+      <section class="grid" id="grid" aria-label="Tapas de la fecha"></section>
+      <aside class="rail">
+        <div id="standings" class="standings"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <span>Bórdmula 1 · <span id="year"></span></span>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
